@@ -159,12 +159,13 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(name:, age:, gender:, admin:)
-    @name = name
-    @age = age
-    @gender = gender
-    @admin = admin
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
+    @admin = params[:admin]
   end
+
   def info
     # admin =
     # if @admin
@@ -198,7 +199,20 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  attr_accessor :name
 
+    def initialize(**params)
+      @name = params[:name]
+      @age = params[:age]
+    end
+
+    def introduce
+      if @age > 30
+        "こんにちは,#{@name}と申します。宜しくお願いいたします。"
+      else
+        puts "はいさいまいど〜,#{@name}です!!!"
+      end
+    end
 end
 
 def q18
@@ -213,9 +227,14 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
   end
+
+  def name
+    puts "#{@name}"
+  end
+  
 end
 
 def q19
@@ -226,7 +245,7 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  
 end
 
 class Zoo
