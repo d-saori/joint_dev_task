@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  p names << "齋藤"
 end
 
 def q2
@@ -13,21 +13,22 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
-
+  array = array1 + array2
+  p array
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-
+  puts numbers.count(3)
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-
+  sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -37,21 +38,24 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-
+  p array1.empty?
+  p array2.empty?
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-
+  numbers2 = numbers1.map { |n| n * 10 }
+  p numbers2
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+  # p array.map { |n| n.to_i }
+  p array.map(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -60,7 +64,10 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-
+  # programming_languages = programming_languages.map { |n| n.capitalize }
+  # upper_case_programming_languages = programming_languages.map { |n| n.upcase }
+  programming_languages.map(&:capitalize!)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -70,28 +77,35 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  names.each.with_index(1) { |name, i| puts "会員No.#{i}: #{name}さん" }
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-
+  foods.each do |food|
+    if food.include? "うに"
+      puts "好物です"
+    else
+      puts "まぁまぁ好きです"
+    end
+  end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  puts "ユーザーの趣味一覧"
+  sports.flatten!.uniq!.each.with_index(1) { |sport2, i| puts "No#{i} #{sport2}" }
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data.dig(:user, :name)
 end
 
 def q13
@@ -99,14 +113,14 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  p user_data.update(update_data)
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data.keys
 end
 
 def q15
@@ -114,7 +128,19 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  # if data1.has_key?(:age)
+  #   puts "OK"
+  # else
+  #   puts "NG"
+  # end
+  # if data2.has_key?(:age)
+  #   puts "NG"
+  # else
+  #   puts "NG"
+  # end
+  # 三項演算子→条件 ? 式1 : 式2
+  puts data1.has_key?(:age) ? "OK" : "NG"
+  puts data2.has_key?(:age) ? "OK" : "NG"
 end
 
 def q16
@@ -125,6 +151,13 @@ def q16
     { name: "nakamura", age: 41 }
   ]
 
+  # 以下に回答を記載
+  users.each {|user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  }
+end
+
+class UserQ17
   # 以下に回答を記載
 
 end
