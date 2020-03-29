@@ -159,12 +159,31 @@ end
 
 class UserQ17
   # 以下に回答を記載
-
-end
-
-class UserQ17
-  # 以下に回答を記載
-
+  def initialize(name:, age:, gender:, admin:)
+    @name = name
+    @age = age
+    @gender = gender
+    @admin = admin
+  end
+  def info
+    # admin =
+    # if @admin
+    #   admin = "有り"
+    # else 
+    #   admin = "無し"
+    # end
+    admin = @admin ? "有り" : "無し"
+    # puts "名前:#{@name}"
+    # puts "年齢:#{@age}"
+    # puts "性別:#{@gender}"
+    # puts "管理者権限:#{admin}"
+    puts <<~TEXT
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    管理者権限:#{admin}
+    TEXT
+  end
 end
 
 def q17
