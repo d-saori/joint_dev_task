@@ -39,7 +39,7 @@ def q4
   # deleteメソッドは、Stringクラスには『delete』『delete!』の2種類があるが、Arrayクラスには『delete』メソッドしかない。
   # !が付いているからと言って破壊的メソッドとは限らない(同様に!が付いてないからと言って非破壊的メソッドとも限らない)
   # !ありのメソッドが定義されている場合は、!なしの同名メソッドも定義した方がよい
-  
+
   sports.compact!
   # 以下は変更しないで下さい
   p sports
@@ -58,7 +58,11 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 = numbers1.map { |n| n * 10 }
+
+  # numbers2 = []
+  # numbers1.each { |number1| numbers2 << number1 * 10 }
+  # mapメソッド：各要素に対してブロックを評価した結果を新しい配列にして返す
+  numbers2 = numbers1.map { |number1| number1 * 10 }
   p numbers2
 end
 
