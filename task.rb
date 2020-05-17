@@ -5,6 +5,9 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
+
+  # p names.push("斎藤")
+  # 『<<』は配列に変数を格納(push)する
   p names << "齋藤"
 end
 
@@ -189,8 +192,8 @@ end
 
 def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
-  user1 = UserQ17.new(name: "神里", age: 32, gender: "男", admin: true)
-  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男", admin: false)
+  user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
+  user2 = UserQ17.new(name: "あじー", age: 32, gender: "男")
 
   user1.info
   puts "-------------"
