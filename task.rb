@@ -16,7 +16,10 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
-  array = array1 + array2
+  # array = array1 + array2
+  array = array1 << array2
+  # ↑pushすると連想配列のようになってしまう。flattenメソッド(flatからきている。配列の配列を平坦化した新しい配列を返す。配列中に含まれる配列からすべて要素を取り出して、親の配列の中に並べる)を使う
+  array = array1.flatten!
   p array
 end
 
